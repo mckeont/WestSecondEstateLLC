@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
     <title>West Second Estate LLC</title>
     <style>
 /* Global Styles */
@@ -89,10 +92,42 @@ nav ul li a {
 
 /* About Section */
 #about {
-    background-color: white;
+    background-image: url('media/marble2.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 40px 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
 }
+
+/* Container for image and text */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* About image */
+.about-container img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* About text */
+.about-text {
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
 
 /* Gallery Section */
 .gallery {
@@ -105,6 +140,9 @@ nav ul li a {
     padding: 20px;
     max-width: 1100px;
     margin: 0 auto;
+    background-image: url('media/marble3.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .gallery img {
@@ -200,7 +238,7 @@ footer .social a {
 <body>
     <header>
         <div class="logo">
-            <img src="media/logo.jpg" alt="West Second Estate LLC Logo">
+            <img src="media/logo.png" alt="West Second Estate LLC Logo">
         </div>
         <nav>
             <ul>
@@ -219,31 +257,32 @@ footer .social a {
         <a href="#contact" class="cta">Contact Us</a>
     </section>
     
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Life has taken me through many chapters—each one preparing me for this moment. As a developer, I’m not just building homes—I’m building a future.</p>
-        <p>Our mission is to create safe, clean, and beautiful places for Black and Brown communities, providing sustainable, energy-efficient, and modern housing solutions.</p>
-    </section>
-    
-    <section id="gallery">
-        <center><h2>Our Projects</h2></center>
-        <div class="gallery">
-            <img src="media/image1.jpg" alt="Project 1">
-            <img src="media/image3.jpg" alt="Project 3">
-            <img src="media/image4.jpg" alt="Project 4">
-            <img src="media/image5.jpg" alt="Project 5">
-            <img src="media/image6.jpg" alt="Project 6">
-            <img src="media/image7.jpg" alt="Project 7">
+  <section id="about">
+    <div class="about-container">
+        <img src="media/image2.jpg" alt="Project 2">
+        <div class="about-text">
+            <p>Life has taken me through many chapters—each one preparing me for this moment. I started as a business owner, learning to build from the ground up. Becoming a homeowner taught me the power of ownership, and becoming a landlord showed me how to create cash flow.</p>
+
+            <p>As a mortgage lender, I helped others finance their dreams. Now, as a developer, I’m not just building homes—I’m building a future. My mission is clear: Black and Brown communities deserve more than just housing. They deserve safe, clean, and beautiful places to call home—neighborhoods designed for sustainability, opportunity, and legacy.</p>
+
+            <p>That’s why I’m redefining affordable housing for the 21st century. These aren’t just homes; they’re thoughtfully designed, energy-efficient spaces that adapt to modern living. With smart technology, dedicated work areas, and a focus on health and safety, we’re creating communities that uplift and empower.</p>
+
+            <p>This isn’t just about real estate. It’s about breaking generational cycles, creating opportunities, and leaving a lasting impact. I’ve helped families buy homes—now I’m developing entire communities. And this is just the beginning.</p>
         </div>
-    </section>
+    </div>
+</section>
+
+<section id="gallery">
+    <center><h2>Our Projects</h2></center>
+    <div class="gallery">
+        <a href="media/image1.jpg" data-lightbox="album"><img src="media/image1.jpg" alt="Project 1"></a>
+        <a href="media/image3.jpg" data-lightbox="album"><img src="media/image3.jpg" alt="Project 3"></a>
+        <a href="media/image4.jpg" data-lightbox="album"><img src="media/image4.jpg" alt="Project 4"></a>
+        <a href="media/image5.jpg" data-lightbox="album"><img src="media/image5.jpg" alt="Project 5"></a>
+    </div>
+</section>
+
     
-    <section id="video">
-        <h2>Project Walkthrough</h2>
-        <video controls>
-            <source src="media/video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section>
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Email: <a href="mailto:westsecondestate@gmail.com">westsecondestate@gmail.com</a></p>
@@ -256,9 +295,8 @@ footer .social a {
         </form>
     </section>
     <section id="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial">"West Second Estate, LLC transformed our community! The homes are beautiful, and the service was exceptional." </div>
-        <div class="testimonial">"A game-changer for affordable housing. They care about sustainability and quality." </div>
+        <h2>Listings</h2>
+           <div class="testimonial"> Coming Soon </div>
     </section>
     <footer>
         <p>&copy; 2025 West Second Estate LLC. All Rights Reserved.</p>
