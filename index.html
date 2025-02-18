@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
-    <title>West Second Estate LLC</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<link rel="icon" type="image/x-icon" href="/media/favicon.ico">
+    <title>West Second Estate, LLC</title>
     <style>
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background: linear-gradient(to bottom, #A7C7E7, #D4AF37); /* Baby Blue to Gold */
     color: #333;
     margin: 0;
     padding: 0;
@@ -30,11 +31,14 @@ header {
 .logo {
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding-left: 10px;
 }
 
 .logo img {
     height: 70px;
     max-width: 150px;
+    filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3));
 }
 
 nav ul {
@@ -57,7 +61,7 @@ nav ul li a {
 /* Hero Section */
 .hero {
     position: relative;
-    background: url('media/image7.jpg') no-repeat center center/cover;
+    background: url('media/logo.png') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 80px 20px;
@@ -79,6 +83,12 @@ nav ul li a {
     z-index: 2;
 }
 
+.cta:hover, button:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+
 .cta {
     background-color: gold;
     color: black;
@@ -90,62 +100,23 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* About Section */
-#about {
-    background-image: url('media/marble2.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 40px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-/* Container for image and text */
-.about-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* About image */
-.about-container img {
-    max-width: 250px;
-    height: auto;
-    border-radius: 5px;
-}
-
-/* About text */
-.about-text {
-    flex: 1;
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 600px;
-}
-
-
-/* Gallery Section */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
-    place-items: center;
-    padding: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
+/* Swiper Gallery Section */
+#gallery {
     background-image: url('media/marble3.jpg');
     background-size: cover;
     background-position: center;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.gallery img {
+.swiper-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.swiper-slide img {
     width: 100%;
     max-width: 280px;
     height: auto;
@@ -153,28 +124,104 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* Video Section */
-#video {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #e0e0e0;
+/* Navigation arrows */
+.swiper-button-prev, .swiper-button-next {
+    color: white; /* Adjust color as needed */
 }
 
-video {
-    width: 70%;
-    max-width: 500px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 5px;
+/* Pagination dots */
+.swiper-pagination {
+    position: relative;
+    bottom: 10px;
 }
 
-/* Contact Section */
-#contact {
-    background: linear-gradient(to bottom, #f0f0f0, #d3d3d3);
+
+
+/* General Content Section Styling */
+.content-section {
+    background-image: url('media/marble3.jpg'); /* Matches the About section */
+    background-size: cover;
+    background-position: center;
     padding: 40px 20px;
-    color: black;
     text-align: center;
+    max-width: 1000px;
+    margin: 40px auto; /* Adds spacing between sections */
+    border-radius: 15px; /* Rounded edges for a sleek look */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
 }
+
+.content-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Ensure readability */
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444; /* Adjust for readability */
+}
+
+
+
+
+/* About Section Styling */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 40px auto;
+    gap: 40px;
+    padding: 30px;
+    background-image: url('media/marble3.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 280px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    max-width: 600px;
+    color: #333;
+}
+
+.about-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .listings-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 
 form input, form textarea {
     width: 80%;
@@ -211,18 +258,34 @@ footer {
     margin-top: 20px;
     font-size: 12px;
 }
-/* Testimonials Section */
-#testimonials {
-    background: #fff;
-    padding: 40px 20px;
-    text-align: center;
+.listings-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.testimonial {
-    max-width: 600px;
-    margin: 20px auto;
-    font-style: italic;
-}
+        /* Listings Section */
+        #listings {
+            background: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .listing-item {
+            display: inline-block;
+            width: 300px;
+            margin: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .listing-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+		
 footer .social {
     margin-top: 10px;
 }
@@ -236,30 +299,34 @@ footer .social a {
     </style>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <header>
-        <div class="logo">
-            <img src="media/logo.png" alt="West Second Estate LLC Logo">
+        <div>
+          <h2>Building a Future, One Home at a Time</h2>
+        <p>Redefining affordable housing for the 21st century.</p>
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#mentorship">Mentorship</a></li>
+                <li><a href="#listings">Listings</a></li>
             </ul>
         </nav>
     </header>
     
-    <section id="home" class="hero">
-        <h1>Building a Future, One Home at a Time</h1>
-        <p>Redefining affordable housing for the 21st century.</p>
-        <a href="#contact" class="cta">Contact Us</a>
+  <section id="home" class="hero">
     </section>
-    
-  <section id="about">
+
+<section id="about">
     <div class="about-container">
-        <img src="media/image2.JPG" alt="Project 2">
+        <div class="about-image">
+            <img src="media/image2.jpg" alt="Project Leader">
+        </div>
         <div class="about-text">
+            <h2>About Us</h2>
             <p>Life has taken me through many chapters—each one preparing me for this moment. I started as a business owner, learning to build from the ground up. Becoming a homeowner taught me the power of ownership, and becoming a landlord showed me how to create cash flow.</p>
 
             <p>As a mortgage lender, I helped others finance their dreams. Now, as a developer, I’m not just building homes—I’m building a future. My mission is clear: Black and Brown communities deserve more than just housing. They deserve safe, clean, and beautiful places to call home—neighborhoods designed for sustainability, opportunity, and legacy.</p>
@@ -271,31 +338,63 @@ footer .social a {
     </div>
 </section>
 
+<section id="mission" class="content-section">
+    <h2>Our Mission</h2><center>
+    <p>
+The 21st-century affordable housing model focuses on sustainability, adaptability, and technology to meet modern living needs. It emphasizes multi-functional spaces that accommodate work-from-home lifestyles while integrating energy-efficient designs, such as solar power, rainwater harvesting, and advanced HVAC systems for clean air. Smart home features, including high-speed internet, climate controls, and security monitoring, enhance convenience and safety.
+
+The housing units are designed with accessibility in mind, featuring wide doorways, ramps, and handicap-friendly bathrooms. They also prioritize social inclusion, ensuring integration with local communities through co-working spaces, recreational amenities, and essential services. Flexible living spaces allow for a seamless transition between work, entertainment, and family activities, with modern kitchens and designated quiet areas for productivity.
+
+Outdoor spaces such as balconies, patios, and green areas provide additional comfort, while the development approach avoids isolated projects by incorporating community redevelopment efforts. Various unit types, including townhouses and ranchers, are available with two or three bedrooms and up to two bathrooms, making them suitable for urban, rural, and small-town locations. Additionally, financing support and rental assistance are available to help buyers and renters secure these homes. The model represents a forward-thinking approach to affordable housing, balancing affordability with modern lifestyle needs.</p>
+</center>
+</section>
+
+<section id="mentorship" class="content-section">
+    <h2>Mentorship & Community Support</h2> <center>
+    <p>Our commitment to 21st-century affordable housing goes beyond building homes—we strive to empower individuals and families through mentorship and community support. Our mentorship program connects residents, aspiring homeowners, and entrepreneurs with experienced professionals in real estate, finance, and business development.
+
+Through personalized guidance, workshops, and networking opportunities, we help individuals navigate homeownership, financial planning, and career growth. Whether you need assistance with securing a mortgage, starting a business, or learning sustainable living practices, our mentorship program provides the resources and support to help you succeed.
+
+Join our mentorship community and gain the knowledge, confidence, and connections to build a brighter future. Contact us to learn more about upcoming sessions, one-on-one coaching, and community networking events.
+</p> </center>
+</section>
+
+
 <section id="gallery">
-    <center><h2>Our Projects</h2></center>
-    <div class="gallery">
-        <a href="media/image1.jpg" data-lightbox="album"><img src="media/image1.jpg" alt="Project 1"></a>
-        <a href="media/image3.jpg" data-lightbox="album"><img src="media/image3.jpg" alt="Project 3"></a>
-        <a href="media/image4.jpg" data-lightbox="album"><img src="media/image4.jpg" alt="Project 4"></a>
-        <a href="media/image5.jpg" data-lightbox="album"><img src="media/image5.jpg" alt="Project 5"></a>
+    <center><h2>BEFORE AND AFTER </h2></center>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="media/newPhotos/After1.jpg" data-lightbox="album"><img src="media/newPhotos/After1.jpg" alt="Project 1"></a></div>
+            <div class="swiper-slide"><a href="media/newPhotos/Before1.jpg" data-lightbox="album"><img src="media/newPhotos/Before1.jpg" alt="Project 3"></a></div>
+            <div class="swiper-slide"><a href="media/newPhotos/After2.jpg" data-lightbox="album"><img src="media/newPhotos/After2.jpg" alt="Project 4"></a></div>
+            <div class="swiper-slide"><a href="media/newPhotos/Before2a.jpg" data-lightbox="album"><img src="media/newPhotos/Before2a.jpg" alt="Project 5"></a></div>
+			<div class="swiper-slide"><a href="media/newPhotos/Before2b.jpg" data-lightbox="album"><img src="media/newPhotos/Before2b.jpg" alt="Project 6"></a></div>
+        </div>
+        
+        <!-- Navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
     </div>
 </section>
 
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:westsecondestate@gmail.com">westsecondestate@gmail.com</a></p>
-        <p>Phone: (201) 903-5462</p>
-        <form action="#" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-    <section id="testimonials">
-        <h2>Listings</h2>
-           <div class="testimonial"> Coming Soon </div>
+
+    <section id="listings">
+        <h2>Available Listings</h2>
+        <div class="listing-item">
+            <img src="media/home1.jpg" alt="Home 1">
+            <h3>Modern Townhouse</h3>
+            <p>3 Beds | 2 Baths | Smart Home Features</p>
+            <p>Price: $250,000</p>
+        </div>
+        <div class="listing-item">
+            <img src="media/home2.jpg" alt="Home 2">
+            <h3>Eco-Friendly Rancher</h3>
+            <p>2 Beds | 2 Baths | Solar Panels</p>
+            <p>Price: $200,000</p>
+        </div>
     </section>
     <footer>
         <p>&copy; 2025 West Second Estate LLC. All Rights Reserved.</p>
@@ -303,7 +402,43 @@ footer .social a {
             <a href="#">Facebook</a>
             <a href="#">Instagram</a>
             <a href="#">LinkedIn</a>
-        </div>
+        </div><div>
+		<h2> CONTACT US</h3>
+		    <p>EMAIL <a href="mailto:westsecondestate@gmail.com">westsecondestate@gmail.com</a></>
+        <p>PHONE (201) 903-5462</p>
+		</div>
     </footer>
+	<!-- Swiper.js -->
+
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        loop: true,
+        slidesPerView: 1,  /* Change to 2 or 3 if you want multiple images visible */
+        spaceBetween: 20,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        }
+    });
+
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+
 </body>
 </html>
