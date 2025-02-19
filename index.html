@@ -152,8 +152,13 @@ nav ul li a {
 }
 
 .swiper-pagination {
-    bottom: 10px;
+    position: absolute;
+    bottom: 10px; /* Moves it below the images */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
+
 
 /* Adjust Swiper for smaller screens */
 @media screen and (max-width: 768px) {
