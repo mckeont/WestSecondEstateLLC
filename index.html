@@ -75,7 +75,8 @@ nav ul li a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(137, 207, 240, 0.2); /* Baby Blue with 20% opacity */
+
 }
 
 .hero h1, .hero p, .hero .cta {
@@ -109,32 +110,53 @@ nav ul li a {
     text-align: center;
 }
 
+./* Ensure the Swiper container is responsive */
 .swiper-container {
-    width: 100%;
-    max-width: 1100px;
+    width: 90%; /* Adjusts to screen size */
+    max-width: 1000px; /* Prevents it from getting too large */
     margin: 0 auto;
     padding: 20px;
+    overflow: hidden; /* Prevents images from overflowing */
 }
 
+/* Ensure images scale properly */
 .swiper-slide img {
-    width: 100%;
-    max-width: 280px;
+    width: 100%; 
     height: auto;
     object-fit: cover;
     border-radius: 5px;
+    display: block;
+    margin: auto;
 }
 
-/* Navigation arrows */
+/* Make navigation arrows and pagination smaller */
 .swiper-button-prev, .swiper-button-next {
-    color: white; /* Adjust color as needed */
+    color: white;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* Pagination dots */
 .swiper-pagination {
-    position: relative;
     bottom: 10px;
 }
 
+/* Adjust Swiper for smaller screens */
+@media screen and (max-width: 768px) {
+    .swiper-container {
+        width: 95%;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        font-size: 16px; /* Reduce button size */
+    }
+}
+
+
+.content-section {
+    padding: 20px;
+    border-radius: 10px;
+}
 
 
 /* General Content Section Styling */
@@ -148,6 +170,8 @@ nav ul li a {
     margin: 40px auto; /* Adds spacing between sections */
     border-radius: 15px; /* Rounded edges for a sleek look */
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+	background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+
 }
 
 .content-section h2 {
@@ -158,18 +182,15 @@ nav ul li a {
 
 .content-section p {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.4;
     color: #444; /* Adjust for readability */
 }
 
-
-
-
-/* About Section Styling */
 .about-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap; /* Ensures it adapts for smaller screens */
     max-width: 1000px;
     margin: 40px auto;
     gap: 40px;
@@ -180,6 +201,63 @@ nav ul li a {
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
 }
+
+.about-image img {
+    width: 280px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text {
+    max-width: 600px;
+    color: #333;
+}
+
+.about-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Ensure it stacks correctly on mobile */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+.about-text {
+    max-width: 600px;
+    color: #333;
+}
+
+.about-text h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Ensure it stacks correctly on mobile */
+@media screen and (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 
 .about-image img {
     width: 280px;
@@ -323,7 +401,7 @@ footer .social a {
 <section id="about">
     <div class="about-container">
         <div class="about-image">
-<img src="https://mckeont.github.io/WestSecondEstateLLC/media/image2.JPG" alt="Project Leader">
+            <img src="media/image2.jpg" alt="Project Leader">
         </div>
         <div class="about-text">
             <h2>About Us</h2>
@@ -338,30 +416,48 @@ footer .social a {
     </div>
 </section>
 
-<section id="mission" class="content-section">
-    <h2>Our Mission</h2><center>
-    <p>
-The 21st-century affordable housing model focuses on sustainability, adaptability, and technology to meet modern living needs. It emphasizes multi-functional spaces that accommodate work-from-home lifestyles while integrating energy-efficient designs, such as solar power, rainwater harvesting, and advanced HVAC systems for clean air. Smart home features, including high-speed internet, climate controls, and security monitoring, enhance convenience and safety.
+<section id="mission">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="media/mentor.png" alt="Mentor">
+        </div>
+        <div class="about-text">
+            <h2>Our Mission</h2>
+            <p>
+At West Second Estate, LLC, we are redefining affordable housing with a focus on sustainability, adaptability, and smart technology. Our homes are energy-efficient, modern, and designed for evolving lifestyles, integrating solar power, rainwater harvesting, advanced HVAC, and smart home features like high-speed internet and security systems. </p> 
 
-The housing units are designed with accessibility in mind, featuring wide doorways, ramps, and handicap-friendly bathrooms. They also prioritize social inclusion, ensuring integration with local communities through co-working spaces, recreational amenities, and essential services. Flexible living spaces allow for a seamless transition between work, entertainment, and family activities, with modern kitchens and designated quiet areas for productivity.
-
-Outdoor spaces such as balconies, patios, and green areas provide additional comfort, while the development approach avoids isolated projects by incorporating community redevelopment efforts. Various unit types, including townhouses and ranchers, are available with two or three bedrooms and up to two bathrooms, making them suitable for urban, rural, and small-town locations. Additionally, financing support and rental assistance are available to help buyers and renters secure these homes. The model represents a forward-thinking approach to affordable housing, balancing affordability with modern lifestyle needs.</p>
-</center>
+<p> We prioritize accessibility and community, incorporating wide doorways, ramps, co-working spaces, and recreational areas to foster inclusive, connected neighborhoods. With flexible layouts, green spaces, and financing support, our homes balance affordability with modern comfort, ensuring a future-ready approach to housing. </p>
+        </div>
+    </div>
 </section>
 
-<section id="mentorship" class="content-section">
-    <h2>Mentorship & Community Support</h2> <center>
-    <p>Our commitment to 21st-century affordable housing goes beyond building homes—we strive to empower individuals and families through mentorship and community support. Our mentorship program connects residents, aspiring homeowners, and entrepreneurs with experienced professionals in real estate, finance, and business development.
 
-Through personalized guidance, workshops, and networking opportunities, we help individuals navigate homeownership, financial planning, and career growth. Whether you need assistance with securing a mortgage, starting a business, or learning sustainable living practices, our mentorship program provides the resources and support to help you succeed.
-
-Join our mentorship community and gain the knowledge, confidence, and connections to build a brighter future. Contact us to learn more about upcoming sessions, one-on-one coaching, and community networking events.
-</p> </center>
+<section id="mentorship">
+    <div class="about-container">
+        <div class="about-image">
+            <img src="media/town.png" alt="Mentorship Program">
+        </div>
+        <div class="about-text">
+            <h2>Mentorship & Community Support</h2>
+            <p>
+                Our commitment to 21st-century affordable housing goes beyond building homes—we strive to empower individuals and families through mentorship and community support. 
+                Our mentorship program connects residents, aspiring homeowners, and entrepreneurs with experienced professionals in real estate, finance, and business development.
+            </p>
+            <p>
+                Through personalized guidance, workshops, and networking opportunities, we help individuals navigate homeownership, financial planning, and career growth. 
+                Whether you need assistance with securing a mortgage, starting a business, or learning sustainable living practices, our mentorship program provides the resources and support to help you succeed.
+            </p>
+            <p>
+                Join our mentorship community and gain the knowledge, confidence, and connections to build a brighter future. 
+                Contact us to learn more about upcoming sessions, one-on-one coaching, and community networking events.
+            </p>
+        </div>
+    </div>
 </section>
 
 
 <section id="gallery">
-    <center><h2>BEFORE AND AFTER </h2></center>
+    <center><h2>PROJECTS BEFORE AND AFTER </h2></center>
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><a href="media/newPhotos/After1.jpg" data-lightbox="album"><img src="media/newPhotos/After1.jpg" alt="Project 1"></a></div>
@@ -384,17 +480,15 @@ Join our mentorship community and gain the knowledge, confidence, and connection
     <section id="listings">
         <h2>Available Listings</h2>
         <div class="listing-item">
-            <img src="media/home1.jpg" alt="Home 1">
-            <h3>Modern Townhouse</h3>
-            <p>3 Beds | 2 Baths | Smart Home Features</p>
-            <p>Price: $250,000</p>
+            <h3>Coming Soon</h3>
         </div>
         <div class="listing-item">
-            <img src="media/home2.jpg" alt="Home 2">
-            <h3>Eco-Friendly Rancher</h3>
-            <p>2 Beds | 2 Baths | Solar Panels</p>
-            <p>Price: $200,000</p>
-        </div>
+            <h3>Coming Soon</h3>
+        </div><div>
+		<h2> CONTACT US</h3>
+		    <h3> <a href="mailto:westsecondestate@gmail.com">westsecondestate@gmail.com</a></h3>
+        <p>201-903-5462</p>
+		</div>
     </section>
     <footer>
         <p>&copy; 2025 West Second Estate LLC. All Rights Reserved.</p>
@@ -402,41 +496,34 @@ Join our mentorship community and gain the knowledge, confidence, and connection
             <a href="#">Facebook</a>
             <a href="#">Instagram</a>
             <a href="#">LinkedIn</a>
-        </div><div>
-		<h2> CONTACT US</h3>
-		    <p>EMAIL <a href="mailto:westsecondestate@gmail.com">westsecondestate@gmail.com</a></>
-        <p>PHONE (201) 903-5462</p>
-		</div>
+        </div>
     </footer>
 	<!-- Swiper.js -->
 
 
 <script>
-    var swiper = new Swiper('.swiper-container', {
-        loop: true,
-        slidesPerView: 1,  /* Change to 2 or 3 if you want multiple images visible */
-        spaceBetween: 20,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev"
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true
-        }
-    });
+var swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 1, // Default for mobile
+    spaceBetween: 10,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+    },
+    breakpoints: {
+        768: { slidesPerView: 2 }, // 2 images per view for tablets
+        1024: { slidesPerView: 3 } // 3 images per view for desktops
+    }
+});
 
-    document.querySelectorAll('nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
 </script>
 
 
