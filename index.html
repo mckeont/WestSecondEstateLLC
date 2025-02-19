@@ -14,10 +14,22 @@
 /* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #A7C7E7, #D4AF37); /* Baby Blue to Gold */
+    background: linear-gradient(to bottom, #91BFF1 20%, #F1C40F 80%);
+
     color: #333;
     margin: 0;
     padding: 0;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #A7C7E7, #D4AF37);
+    z-index: -1;
+    opacity: 0.9; /* Adjust transparency */
 }
 
 /* Header */
@@ -187,6 +199,12 @@ nav ul li a {
     line-height: 1.4;
     color: #444; /* Adjust for readability */
 }
+
+.content-section, .about-container {
+    background-color: rgba(255, 255, 255, 0.7); /* Lighter background for better visibility */
+    backdrop-filter: blur(5px); /* Soft blur to make text readable while showing gradient */
+}
+
 
 .about-container {
     display: flex;
